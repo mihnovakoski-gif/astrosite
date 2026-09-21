@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Projetos — Astro</title>
+<meta name="description" content="Projetos desenvolvidos pela Astro.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400&family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<a class="skip" href="#conteudo">Ir para o conteúdo</a>
+
+<header class="top">
+  <div class="top-in">
+    <a class="brand" href="index.html">
+      <svg width="40" height="40" viewBox="0 0 40 40" role="img" aria-label="Símbolo da Astro: um círculo com um ponto em órbita">
+        <circle cx="20" cy="20" r="11" fill="none" stroke="currentColor" stroke-width="2"/>
+        <ellipse cx="20" cy="20" rx="18" ry="7" fill="none" stroke="currentColor" stroke-width="1.5" opacity=".45" transform="rotate(-25 20 20)"/>
+        <circle cx="35" cy="13" r="3.2" fill="#2138CE"/>
+      </svg>
+      <div>
+        <p class="mark">Astro</p>
+        <p>Tecnologia, funcionalidade e acessibilidade</p>
+      </div>
+    </a>
+    <button class="theme-btn" id="theme" type="button" aria-pressed="false">Tema escuro</button>
+  </div>
+  <div class="wrap" style="padding-bottom:2rem">
+    <p class="lede">Transformamos ideias e necessidades reais em ferramentas digitais <b>simples, eficientes e para todas as pessoas</b>.</p>
+  </div>
+</header>
+
+<div class="wrap">
+  <div class="shell">
+    <nav class="tabs" aria-label="Seções do site">
+      <a href="index.html"><span class="dot"></span>Sobre nós</a>
+      <a href="contato.html"><span class="dot"></span>Contato</a>
+      <a href="parcerias.html"><span class="dot"></span>Parcerias</a>
+      <a href="certificados.html"><span class="dot"></span>Certificados</a>
+      <a href="horario.html"><span class="dot"></span>Horário de funcionamento</a>
+      <a href="projetos.html" aria-current="page"><span class="dot"></span>Projetos</a>
+    </nav>
+
+    <main id="conteudo">
+      <h2 class="panel-h">Projetos</h2>
+      <ul class="projects">
+        <li>
+          <h3>Tecflix</h3>
+          <p>Sistema de assistência técnica.</p>
+        </li>
+        <li>
+          <h3>Astro Acessível</h3>
+          <p>Plataforma de acessibilidade digital.</p>
+        </li>
+        <li>
+          <h3>Astro Data</h3>
+          <p>Sistema de gerenciamento de dados.</p>
+        </li>
+      </ul>
+    </main>
+  </div>
+</div>
+
+<footer><div>Astro — soluções digitais acessíveis. Telefone +55 11 91234-5678.</div></footer>
+<script src="script.js"></script>
+</body>
+</html>

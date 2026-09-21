@@ -1,0 +1,140 @@
+:root{
+  --paper:#F2F5FC;
+  --surface:#FFFFFF;
+  --ink:#101534;
+  --ink-soft:#3D456E;
+  --line:#C9D2E8;
+  --accent:#2138CE;
+  --accent-ink:#FFFFFF;
+  --teal:#0A6E60;
+  --amber:#9A5B04;
+  --focus:#9C1AC7;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --paper:#0A0F22; --surface:#121933; --ink:#EDF0FA; --ink-soft:#AFB8D9;
+    --line:#2B355C; --accent:#93A8FF; --accent-ink:#0A0F22; --teal:#4FD3B8;
+    --amber:#E8B95F; --focus:#F09CFF;
+  }
+}
+:root[data-theme="dark"]{
+  --paper:#0A0F22; --surface:#121933; --ink:#EDF0FA; --ink-soft:#AFB8D9;
+  --line:#2B355C; --accent:#93A8FF; --accent-ink:#0A0F22; --teal:#4FD3B8;
+  --amber:#E8B95F; --focus:#F09CFF;
+}
+
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{
+  margin:0;background:var(--paper);color:var(--ink);
+  font-family:"Atkinson Hyperlegible","Segoe UI",system-ui,-apple-system,sans-serif;
+  font-size:1.0625rem;line-height:1.65;
+}
+h1,h2,h3,.mark{
+  font-family:"Bricolage Grotesque","Atkinson Hyperlegible",system-ui,sans-serif;
+  font-weight:700;line-height:1.1;letter-spacing:-0.015em;margin:0;
+}
+a{color:var(--accent)}
+a:hover{text-decoration-thickness:2px}
+:focus-visible{outline:3px solid var(--focus);outline-offset:3px;border-radius:2px}
+
+.skip{position:absolute;left:-9999px;top:0;background:var(--ink);color:var(--paper);padding:.7rem 1rem;z-index:10}
+.skip:focus{left:.5rem;top:.5rem}
+
+.wrap{max-width:74rem;margin:0 auto;padding:0 1.25rem 4rem}
+
+header.top{border-bottom:1px solid var(--line);background:var(--surface)}
+.top-in{
+  max-width:74rem;margin:0 auto;padding:1.5rem 1.25rem 1.75rem;
+  display:flex;flex-wrap:wrap;gap:1.5rem;align-items:flex-start;justify-content:space-between;
+}
+.brand{display:flex;gap:.85rem;align-items:center;text-decoration:none;color:inherit}
+.brand svg{flex:none}
+.mark{font-size:1.9rem}
+.brand p{margin:.15rem 0 0;font-size:.95rem;color:var(--ink-soft)}
+.theme-btn{
+  font:inherit;font-size:.9rem;background:transparent;color:var(--ink);
+  border:1.5px solid var(--line);border-radius:999px;padding:.45rem 1rem;cursor:pointer;
+}
+.theme-btn:hover{border-color:var(--accent);color:var(--accent)}
+
+.lede{
+  max-width:52ch;margin:0;font-size:1.55rem;line-height:1.28;
+  font-family:"Bricolage Grotesque",sans-serif;font-weight:500;letter-spacing:-0.02em;
+}
+.lede b{font-weight:700;color:var(--teal)}
+
+.shell{display:grid;grid-template-columns:15rem 1fr;gap:2.5rem;padding-top:2.5rem}
+nav.tabs{display:flex;flex-direction:column;gap:.15rem;position:sticky;top:1.5rem;align-self:start}
+nav.tabs a{
+  font:inherit;text-align:left;color:var(--ink-soft);text-decoration:none;
+  border-left:3px solid var(--line);padding:.6rem .9rem;
+  display:flex;align-items:baseline;gap:.6rem;
+}
+nav.tabs a:hover{color:var(--ink);border-left-color:var(--ink-soft)}
+nav.tabs a[aria-current="page"]{
+  color:var(--ink);font-weight:700;border-left:3px solid var(--accent);background:var(--surface);
+}
+nav.tabs a .dot{width:.4rem;height:.4rem;border-radius:50%;background:var(--accent);flex:none;opacity:0;transform:translateY(-.15rem)}
+nav.tabs a[aria-current="page"] .dot{opacity:1}
+
+main{padding-top:.2rem}
+h2.panel-h{font-size:2.1rem;margin-bottom:1.25rem}
+p{max-width:62ch}
+
+.pair{display:grid;gap:1.25rem;grid-template-columns:repeat(auto-fit,minmax(16rem,1fr));margin-top:2rem}
+.pair section{background:var(--surface);border:1px solid var(--line);padding:1.25rem 1.35rem}
+.pair h3{font-size:1.15rem;margin-bottom:.4rem;color:var(--teal)}
+.pair p{margin:0;max-width:none}
+
+.partners{list-style:none;margin:0;padding:0;display:grid;gap:0;border-top:1px solid var(--line)}
+.partners li{
+  border-bottom:1px solid var(--line);padding:1.1rem .2rem;
+  display:flex;gap:1rem;align-items:baseline;justify-content:space-between;
+  font-size:1.25rem;font-family:"Bricolage Grotesque",sans-serif;font-weight:500;
+}
+.partners span{font-family:"Atkinson Hyperlegible",sans-serif;font-size:.9rem;font-weight:400;color:var(--ink-soft);text-align:right}
+
+.certs{display:grid;gap:1.5rem;grid-template-columns:repeat(auto-fit,minmax(15rem,1fr))}
+.certs section{border-top:3px solid var(--amber);padding-top:.9rem}
+.certs h3{font-size:1.1rem;margin-bottom:.6rem}
+.certs ul{margin:0;padding-left:1.1rem;color:var(--ink-soft)}
+.certs li{margin-bottom:.3rem}
+
+table{border-collapse:collapse;width:100%;max-width:30rem;margin:0 0 1.25rem}
+caption{text-align:left;color:var(--ink-soft);font-size:.9rem;padding-bottom:.5rem}
+th,td{text-align:left;padding:.65rem .5rem;border-bottom:1px solid var(--line)}
+th{font-weight:700}
+td{font-variant-numeric:tabular-nums}
+
+.status{display:inline-flex;align-items:center;gap:.55rem;border:1.5px solid var(--line);padding:.4rem .9rem;border-radius:999px;font-size:.95rem}
+.status i{width:.6rem;height:.6rem;border-radius:50%;background:var(--ink-soft);flex:none}
+.status.open i{background:var(--teal)}
+.status.open{border-color:var(--teal);color:var(--teal)}
+
+.projects{list-style:none;margin:0;padding:0;display:grid;gap:1.1rem}
+.projects li{background:var(--surface);border:1px solid var(--line);border-left:4px solid var(--accent);padding:1.1rem 1.3rem}
+.projects h3{font-size:1.25rem}
+.projects p{margin:.3rem 0 0;color:var(--ink-soft)}
+
+.phone{
+  display:inline-block;font-family:"Bricolage Grotesque",sans-serif;
+  font-size:clamp(1.6rem,5vw,2.4rem);font-weight:700;letter-spacing:-0.02em;
+  text-decoration:none;color:var(--ink);border-bottom:4px solid var(--accent);padding-bottom:.15rem;
+}
+.phone:hover{color:var(--accent)}
+.contact-note{margin-top:1.5rem;color:var(--ink-soft)}
+
+footer{border-top:1px solid var(--line);margin-top:1rem}
+footer div{max-width:74rem;margin:0 auto;padding:1.5rem 1.25rem;color:var(--ink-soft);font-size:.9rem}
+
+@media (max-width:860px){
+  .shell{grid-template-columns:1fr;gap:1.5rem;padding-top:1.5rem}
+  nav.tabs{flex-direction:row;position:static;overflow-x:auto;gap:.4rem;padding-bottom:.4rem;border-bottom:1px solid var(--line)}
+  nav.tabs a{border-left:0;border-bottom:3px solid transparent;white-space:nowrap;padding:.5rem .6rem}
+  nav.tabs a[aria-current="page"]{border-left:0;border-bottom:3px solid var(--accent);background:transparent}
+  nav.tabs a .dot{display:none}
+  .lede{font-size:1.3rem}
+  h2.panel-h{font-size:1.7rem}
+}
+@media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
